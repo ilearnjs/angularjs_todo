@@ -1,5 +1,5 @@
 angular.module('app')
-	.component('todoList', {
+	.component('todoListComponent', {
 		controller: todoList,
 		template: require('./todo-list.html'),
 		bindings: {

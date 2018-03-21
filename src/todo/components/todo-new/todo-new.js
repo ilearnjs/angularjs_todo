@@ -1,5 +1,5 @@
 angular.module('app')
-	.component('todoNew', {
+	.component('todoNewComponent', {
 		controller: todoNew,
 		template: require('./todo-new.html'),
 		bindings: {

@@ -1,5 +1,5 @@
 angular.module('app')
-	.component('todoContainer', {
+	.component('todoContainerComponent', {
 		controller: todoContainer,
 		template: require('./todo-container.html')
 	});
