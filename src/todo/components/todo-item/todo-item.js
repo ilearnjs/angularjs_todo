@@ -3,8 +3,7 @@ angular.module('app')
 		controller: todoItem,
 		template: require('./todo-item.html'),
 		bindings: {
-			id: '<',
-			description: '<',
+			item: '<',
 			completed: '<',
 			onDelete: '&',
 			onUpdate: '&',
@@ -20,14 +19,14 @@ function todoItem() {
 	};
 
 	self.enableEditing = () => {
-		self.newDescription = self.description;
+		self.newDescription = self.item.description;
 		self.editing = true;
 	};
 
 	self.deleteTodo = () => {
 		self.onDelete({
 			$event: {
-				id: self.id
+				id: self.item.id
 			}
 		});
 	};
@@ -35,7 +34,7 @@ function todoItem() {
 	self.updateTodo = () => {
 		self.onUpdate({
 			$event: {
-				id: self.id,
+				id: self.item.id,
 				todo: {
 					description: self.newDescription
 				}
@@ -48,7 +47,7 @@ function todoItem() {
 	self.toggleTodo = () => {
 		self.onToggle({
 			$event: {
-				id: self.id
+				id: self.item.id
 			}
 		});
 	};

@@ -1,8 +1,7 @@
 <ul class="todo-list">
 	<div ng-repeat="todo in $ctrl.list">
 	  <todo-item-component
-			id="todo.id"
-			description="todo.description"
+			item="todo"
 			completed="todo.completed"
 			on-delete="$ctrl.deleteTodo($event)"
 			on-update="$ctrl.updateTodo($event)"

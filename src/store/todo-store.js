@@ -2,13 +2,32 @@ angular.module('app')
 	.service('todoStore', todoStore);
 
 function todoStore() {
-	let id = 2;
+	let id = 4;
 	const store = this;
-	const todoList = [{
-		id: 1,
-		description: 'A',
-		completed: false
-	}];
+	const todoList = [
+		{
+			id: 1,
+			description: 'A',
+			createdOn: new Date(),
+			completedOn: null,
+			completed: false
+		},
+		{
+			id: 2,
+			description: 'Ab',
+			createdOn: new Date(),
+			completedOn: null,
+			completed: false
+		},
+		{
+			id: 3,
+			description: 'Abc',
+			createdOn: new Date(),
+			completedOn: null,
+			completed: false
+		}
+	];
+
 	const behaviourSubject = new Rx.BehaviorSubject(todoList);
 
 	store.allTodos$ = behaviourSubject.asObservable();
@@ -18,6 +37,7 @@ function todoStore() {
 			{},
 			todo, {
 				id: id++,
+				createdOn: new Date(),
 				completed: false
 			}
 		);
@@ -41,6 +61,7 @@ function todoStore() {
 	store.toggleTodo = id => {
 		const todo = find(id);
 		todo.completed = !todo.completed;
+		todo.completedOn = todo.completed ? new Date() : null;
 		behaviourSubject.next(todoList);
 	};
 
