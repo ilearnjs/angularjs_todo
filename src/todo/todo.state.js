@@ -10,21 +10,21 @@ angular.module('app')
 				url: '',
 				component: 'todoContainerComponent',
 				resolve: {
-					getFilter: (todoFiltersConstant) => todoFiltersConstant.all
+					filter: (todoFiltersConstant) => todoFiltersConstant.all
 				}
 			})
 			.state('todo.active', {
 				url: 'active',
 				component: 'todoContainerComponent',
 				resolve: {
-					getFilter: (todoFiltersConstant) => todoFiltersConstant.active
+					filter: (todoFiltersConstant) => todoFiltersConstant.active
 				}
 			})
 			.state('todo.completed', {
 				url: 'completed',
 				component: 'todoContainerComponent',
 				resolve: {
-					getFilter: (todoFiltersConstant) => todoFiltersConstant.completed
+					filter: (todoFiltersConstant) => todoFiltersConstant.completed
 				}
 			});
 	});

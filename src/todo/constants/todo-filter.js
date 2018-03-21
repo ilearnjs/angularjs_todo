@@ -1,6 +1,6 @@
 angular.module('app')
 	.constant('todoFiltersConstant', {
 		all: 'all',
-		acive: 'active',
+		active: 'active',
 		completed: 'completed'
 	});
