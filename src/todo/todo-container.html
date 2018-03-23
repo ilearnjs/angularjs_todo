@@ -1,14 +1,10 @@
-<a href ui-sref="todo.new">Add new</a>
+<div class="todo-new">
+	<a href ui-sref="todo.new">Add new</a>	
+</div>
 
 <div
 	ng-if="!$ctrl.noData"
 >
-	<div class="todo-filters">
-		<a href ui-sref="todo.all" ui-sref-active="selected">All</a>
-		<a href ui-sref="todo.active" ui-sref-active="selected">Active</a>
-		<a href ui-sref="todo.completed" ui-sref-active="selected">Completed</a>
-	</div>
-
 	<todo-list-component
 		list="$ctrl.todoList" 
 		on-delete="$ctrl.deleteTodo($event)" 

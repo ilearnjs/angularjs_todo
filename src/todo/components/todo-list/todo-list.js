@@ -1,3 +1,5 @@
+require('./todo-list.css');
+
 angular.module('app')
 	.component('todoListComponent', {
 		controller: todoList,

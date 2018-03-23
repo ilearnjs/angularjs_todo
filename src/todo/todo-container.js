@@ -1,3 +1,5 @@
+require('./todo-container.css');
+
 angular.module('app')
 	.component('todoContainerComponent', {
 		controller: todoContainer,

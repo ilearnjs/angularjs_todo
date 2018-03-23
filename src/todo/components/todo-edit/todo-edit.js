@@ -1,3 +1,5 @@
+require('./todo-edit.css');
+
 angular.module('app')
 	.component('todoEditComponent', {
 		controller: todoEdit,

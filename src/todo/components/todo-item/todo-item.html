@@ -3,20 +3,22 @@
 		class="view" 
 		ng-dblclick="$ctrl.enableEditing()"
 	>
-	  <input
-			class="toggle"
+	  	<input
+			class="checkbox"
 			type="checkbox"
 			ng-checked="$ctrl.completed"
 			ng-click="$ctrl.toggleTodo()"
-			id=""
+			id="checkbox-{{$ctrl.item.id}}"
 		>
 		<label
-			for=""
+			for="checkbox-{{$ctrl.item.id}}"
 		>
-			{{$ctrl.item.createdOn.toLocaleDateString()}}
-		</label>
-	  	<label>
-			{{$ctrl.item.description}}
+			<sapn class="created">
+				{{$ctrl.item.createdOn.toLocaleDateString()}}
+			</sapn>
+			<sapn class="description">
+				{{$ctrl.item.description}}
+			</sapn>
 		</label>
 		<button 
 			ui-sref="todo.edit({todoId: $ctrl.item.id})"

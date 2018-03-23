@@ -1,3 +1,5 @@
+require('./todo-item.css');
+
 angular.module('app')
 	.component('todoItemComponent', {
 		controller: todoItem,

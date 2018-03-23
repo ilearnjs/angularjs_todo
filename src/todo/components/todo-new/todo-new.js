@@ -1,3 +1,5 @@
+require('./todo-new.css');
+
 angular.module('app')
 	.component('todoNewComponent', {
 		controller: todoNew,
