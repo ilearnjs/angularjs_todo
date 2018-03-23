@@ -5,7 +5,6 @@ angular.module('app')
 		bindings: {
 			list: '<',
 			onDelete: '&',
-			onUpdate: '&',
 			onToggle: '&'
 		}
 	});
