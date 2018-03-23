@@ -1,13 +1,27 @@
 <div>
-	<form novalidate class="simple-form">
-		<input 
-			class="todo-edit" 
+	<form
+		novalidate
+		name="todoEditForm" 
+		class="todo-edit-form"
+		ng-submit="$ctrl.submitForm(todoEditForm.$valid)"
+	>
+		<label>Description</label>
+		<input
+			name="description"
+			class="description" 
 			ng-model="$ctrl.editTodo.description"
+			required
+			ng-minlength="5"
 		/>
 		<input 
-			type="submit" 
-			ng-click="$ctrl.submitForm()" 
+			type="submit"
 			value="Edit" 
 		/>
+		<span ng-show="$ctrl.submitted && todoEditForm.description.$error.required">
+			Description is required.
+		</span>
+		<span ng-show="$ctrl.submitted && todoEditForm.description.$error.minlength">
+			Description is too short (min 5 symbols).
+		</span>
 	</form>
 </div>

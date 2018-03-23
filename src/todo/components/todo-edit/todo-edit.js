@@ -12,7 +12,12 @@ function todoEdit($scope, $state, $stateParams, todoStore) {
 		self.editTodo = Object.assign({}, todoStore.getById(id));
 	};
 
-	self.submitForm = () => {
+	self.submitForm = (isValid) => {
+		self.submitted = true;
+		if (!isValid) {
+			return;
+		}
+
 		todoStore.editTodo(id, self.editTodo);
 		$state.go('todo.all');
 	};

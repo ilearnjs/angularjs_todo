@@ -8,8 +8,11 @@
 			type="checkbox"
 			ng-checked="$ctrl.completed"
 			ng-click="$ctrl.toggleTodo()"
+			id=""
 		>
-		<label>
+		<label
+			for=""
+		>
 			{{$ctrl.item.createdOn.toLocaleDateString()}}
 		</label>
 	  	<label>

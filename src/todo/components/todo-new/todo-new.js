@@ -7,11 +7,20 @@ angular.module('app')
 function todoNew($scope, $state, todoStore) {
 	var self = this;
 
+	self.submitted = false;
+
 	self.$onInit = () => {
-		self.newTodo = {};
+		self.newTodo = {
+			description: '',
+		};
 	};
 
-	self.submitForm = () => {
+	self.submitForm = (isValid) => {
+		self.submitted = true;
+		if (!isValid) {
+			return;
+		}
+
 		todoStore.addTodo(self.newTodo);
 		$state.go('todo.all');
 	};
