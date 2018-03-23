@@ -8,10 +8,16 @@
 	<div class="todo-list-header">
 		<span class="checkbox">
 		</span>
-		<span class="created">
+		<span
+			ng-click="$ctrl.sort({field: 'created', direction: -1})"
+			class="created"
+		>
 			Created
 		</span>
-		<span class="description">
+		<span
+			ng-click="$ctrl.sort({field: 'description', direction: 1})"
+			class="description"
+		>
 			Description
 		</span>
 	</div>

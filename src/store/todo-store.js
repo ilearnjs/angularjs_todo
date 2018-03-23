@@ -8,21 +8,21 @@ function todoStore() {
 		{
 			id: 1,
 			description: 'Learn React',
-			createdOn: new Date(),
+			created: new Date('3/10/2018'),
 			completedOn: null,
 			completed: true
 		},
 		{
 			id: 2,
 			description: 'Learn Angular',
-			createdOn: new Date(),
+			created: new Date('3/18/2018'),
 			completedOn: null,
 			completed: false
 		},
 		{
 			id: 3,
 			description: 'Write Unit tests',
-			createdOn: new Date(),
+			created: new Date('3/30/2018'),
 			completedOn: null,
 			completed: false
 		}
@@ -41,7 +41,7 @@ function todoStore() {
 			{},
 			todo, {
 				id: id++,
-				createdOn: new Date(),
+				created: new Date(),
 				completed: false
 			}
 		);

@@ -1,9 +1,9 @@
 <div ng-class="{'editing': $ctrl.editing, 'completed': $ctrl.completed}">
-	<div 
-		class="view" 
+	<div
+		class="view"
 		ng-dblclick="$ctrl.enableEditing()"
 	>
-	  	<input
+		<input
 			class="checkbox"
 			type="checkbox"
 			ng-checked="$ctrl.completed"
@@ -14,24 +14,23 @@
 			for="checkbox-{{$ctrl.item.id}}"
 		>
 			<sapn class="created">
-				{{$ctrl.item.createdOn.toLocaleDateString()}}
+				{{$ctrl.item.created.toLocaleDateString()}}
 			</sapn>
 			<sapn class="description">
 				{{$ctrl.item.description}}
 			</sapn>
 		</label>
-		<button 
+		<button
 			ui-sref="todo.edit({todoId: $ctrl.item.id})"
-			class="edit" 
+			class="edit"
 		>
 			Edit
 		</button>
-		<button 
-			class="delete" 
+		<button
+			class="delete"
 			ng-click="$ctrl.deleteTodo()"
 		>
 			Delete
 		</button>
 	</div>
 </div>
-  
