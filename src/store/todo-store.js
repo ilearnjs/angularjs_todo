@@ -32,6 +32,10 @@ function todoStore() {
 
 	store.allTodos$ = behaviourSubject.asObservable();
 
+	store.getById = id => {
+		return find(id);
+	};
+
 	store.addTodo = todo => {
 		const newTodo = Object.assign(
 			{},
@@ -52,7 +56,7 @@ function todoStore() {
 		behaviourSubject.next(todoList);
 	};
 
-	store.updateTodo = (id, todo) => {
+	store.editTodo = (id, todo) => {
 		const existingTodo = find(id);
 		existingTodo.description = todo.description;
 		behaviourSubject.next(todoList);

@@ -30,5 +30,9 @@ angular.module('app')
 			.state('todo.new', {
 				url: 'new',
 				component: 'todoNewComponent'
+			})
+			.state('todo.edit', {
+				url: 'edit/{todoId:int}',
+				component: 'todoEditComponent'
 			});
 	});

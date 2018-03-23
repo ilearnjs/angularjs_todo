@@ -21,15 +21,6 @@ function todoList() {
 		});
 	};
 
-	self.updateTodo = event => {
-		self.onUpdate({
-			$event: {
-				id: event.id,
-				todo: event.todo
-			}
-		});
-	};
-
 	self.toggleTodo = event => {
 		self.onToggle({
 			$event: {

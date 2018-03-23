@@ -16,20 +16,17 @@
 			{{$ctrl.item.description}}
 		</label>
 		<button 
+			ui-sref="todo.edit({todoId: $ctrl.item.id})"
+			class="edit" 
+		>
+			Edit
+		</button>
+		<button 
 			class="delete" 
 			ng-click="$ctrl.deleteTodo()"
 		>
 			Delete
 		</button>
 	</div>
-	<form
-		ng-if="$ctrl.editing"
-		ng-submit="$ctrl.updateTodo()"
-	>
-	  	<input 
-			class="edit" 
-			ng-model="$ctrl.newDescription"
-		>
-	</form>
 </div>
   
