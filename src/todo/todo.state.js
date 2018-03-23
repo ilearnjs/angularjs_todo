@@ -26,5 +26,9 @@ angular.module('app')
 				resolve: {
 					filter: (todoFiltersConstant) => todoFiltersConstant.completed
 				}
+			})
+			.state('todo.new', {
+				url: 'new',
+				component: 'todoNewComponent'
 			});
 	});

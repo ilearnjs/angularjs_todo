@@ -23,10 +23,6 @@ function todoContainer($scope, todoStore, todoFiltersConstant) {
 		subs['todoList'].unsubscribe();
 	};
 
-	self.addTodo = event => {
-		todoStore.addTodo(event.todo);
-	};
-
 	self.deleteTodo = event => {
 		todoStore.deleteTodo(event.id);
 	};

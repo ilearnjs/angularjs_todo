@@ -1,6 +1,6 @@
-<form ng-submit="$ctrl.submitForm()">
-	<input
-		class="todo-new"
-		ng-model="$ctrl.newTodo.description"
-	>
-</form>
+<div>
+	<form novalidate class="simple-form">
+		<input class="todo-new" ng-model="$ctrl.newTodo.description">
+		<input type="submit" ng-click="$ctrl.submitForm()" value="Add" />
+	</form>
+</div>

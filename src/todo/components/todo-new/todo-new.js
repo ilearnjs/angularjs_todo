@@ -1,31 +1,18 @@
 angular.module('app')
 	.component('todoNewComponent', {
 		controller: todoNew,
-		template: require('./todo-new.html'),
-		bindings: {
-			onSubmit: '&'
-		}
+		template: require('./todo-new.html')
 	});
 
-function todoNew() {
+function todoNew($scope, $state, todoStore) {
 	var self = this;
 
 	self.$onInit = () => {
 		self.newTodo = {};
-		resetTodo();
 	};
 
 	self.submitForm = () => {
-		self.onSubmit({
-			$event: {
-				todo: self.newTodo
-			}
-		});
-
-		resetTodo();
+		todoStore.addTodo(self.newTodo);
+		$state.go('todo.all');
 	};
-
-	function resetTodo() {
-		self.newTodo = {};
-	}
 }
