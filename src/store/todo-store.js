@@ -7,21 +7,21 @@ function todoStore() {
 	const todoList = [
 		{
 			id: 1,
-			description: 'A',
+			description: 'Learn React',
 			createdOn: new Date(),
 			completedOn: null,
-			completed: false
+			completed: true
 		},
 		{
 			id: 2,
-			description: 'Ab',
+			description: 'Learn Angular',
 			createdOn: new Date(),
 			completedOn: null,
 			completed: false
 		},
 		{
 			id: 3,
-			description: 'Abc',
+			description: 'Write Unit tests',
 			createdOn: new Date(),
 			completedOn: null,
 			completed: false
